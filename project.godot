@@ -10,6 +10,7 @@ config_version=5
 
 [application]
 
+<<<<<<< Updated upstream
 config/name="Ogre's Paradise"
 run/main_scene="res://tempmain.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
@@ -42,6 +43,13 @@ right={
 ]
 }
 
+=======
+config/name="OgreParadise"
+run/main_scene="res://ui.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://icon.svg"
+
+>>>>>>> Stashed changes
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
