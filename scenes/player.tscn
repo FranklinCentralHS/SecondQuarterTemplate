@@ -18,7 +18,9 @@ height = 34.0
 
 [node name="player" type="CharacterBody2D"]
 position = Vector2(0, -9)
+collision_layer = 3
 script = ExtResource("1_jg2l6")
+speed = 80
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-3, -5)

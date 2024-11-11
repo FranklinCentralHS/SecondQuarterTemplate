@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://5e8m03f4i88d"]
+[gd_scene load_steps=22 format=3 uid="uid://5e8m03f4i88d"]
 
 [ext_resource type="Texture2D" uid="uid://cggallgouya18" path="res://assets/enemy/Slime Idle.png" id="1_illfp"]
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_xpvnm"]
@@ -8,17 +8,13 @@
 atlas = ExtResource("1_illfp")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i78ik"]
-atlas = ExtResource("1_illfp")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nut6p"]
-atlas = ExtResource("1_illfp")
-region = Rect2(32, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_tyfri"]
 atlas = ExtResource("1_illfp")
 region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i78ik"]
+atlas = ExtResource("1_illfp")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7kp5k"]
 atlas = ExtResource("2_r1na0")
@@ -75,17 +71,14 @@ animations = [{
 "texture": SubResource("AtlasTexture_ytqy5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i78ik")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nut6p")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_tyfri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i78ik")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -138,11 +131,14 @@ radius = 41.1096
 
 [node name="slime" type="Node2D"]
 script = ExtResource("1_xpvnm")
+speed = 125
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_lkyfb")
 animation = &"moving"
+autoplay = "idle"
+frame_progress = 0.0470382
 offset = Vector2(0, -4)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
