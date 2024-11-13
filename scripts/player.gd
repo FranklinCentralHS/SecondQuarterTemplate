@@ -1,7 +1,8 @@
 extends CharacterBody2D
+class_name Player
 
 var direction: Vector2 = Vector2.ZERO
-@export var speed: int = 50
+@export var speed: int = 250
 @onready var animations = $AnimatedSprite2D
 
 func _process(_delta):
@@ -16,8 +17,7 @@ func _process(_delta):
 		animations.play("move_up")
 	elif direction.x == 0:
 		animations.play("idle_forward")
-	
+
 func _physics_process(_delta):
 	velocity = direction * speed
 	move_and_slide()
-
