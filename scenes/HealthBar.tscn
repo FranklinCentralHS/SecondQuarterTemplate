@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj0ab7ta44d44"]
+
+[ext_resource type="Script" path="res://scripts/HealthBar.gd" id="1_twh2e"]
+[ext_resource type="PackedScene" uid="uid://dfcden2bam4jo" path="res://scenes/Resource_Meter.tscn" id="2_eompv"]
+
+[node name="HealthBar" type="CanvasLayer"]
+script = ExtResource("1_twh2e")
+health = 300
+
+[node name="health_bar" parent="." instance=ExtResource("2_eompv")]

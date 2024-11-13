@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://chl23sse3226y"]
+[gd_scene load_steps=8 format=3 uid="uid://dwnpjq6njtw03"]
 
 [ext_resource type="Texture2D" uid="uid://023lyws6b8ea" path="res://assets/tiles/tileset.png" id="1_rcm8w"]
 [ext_resource type="Texture2D" uid="uid://b8m477qsfgmlt" path="res://assets/tiles/Wall Tiles.png" id="2_si0g5"]
 [ext_resource type="PackedScene" uid="uid://2f5m5yvx1n14" path="res://scenes/player.tscn" id="3_c7nce"]
+[ext_resource type="PackedScene" uid="uid://cbjlvadecbwhj" path="res://scenes/heart.tscn" id="4_obcdu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3tah"]
 texture = ExtResource("1_rcm8w")
@@ -546,3 +547,6 @@ layer_2/tile_data = PackedInt32Array(-720917, 327680, 1, -655381, 327680, 1, -58
 
 [node name="player" parent="." instance=ExtResource("3_c7nce")]
 position = Vector2(-67, 40)
+
+[node name="Heart" parent="." instance=ExtResource("4_obcdu")]
+position = Vector2(106, -15)
