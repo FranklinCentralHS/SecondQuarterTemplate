@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbjlvadecbwhj"]
+[gd_scene load_steps=11 format=3 uid="uid://cbjlvadecbwhj"]
 
 [ext_resource type="Texture2D" uid="uid://vrvb8xljnp5y" path="res://assets/GUI Bars/speen.png" id="1_ii1n3"]
+[ext_resource type="Script" path="res://scenes/heart.gd" id="1_kkct5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ut8pb"]
 atlas = ExtResource("1_ii1n3")
@@ -56,6 +57,7 @@ animations = [{
 radius = 8.0
 
 [node name="Heart" type="Area2D"]
+script = ExtResource("1_kkct5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1.19209e-07, 0)
@@ -66,3 +68,5 @@ frame_progress = 0.830219
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0yw8r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

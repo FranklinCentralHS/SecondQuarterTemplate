@@ -7,3 +7,6 @@ func _on_ready():
 	rectangle.max_value = health
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
+
+func set_health(newHealth):
+	rectangle.value += 10

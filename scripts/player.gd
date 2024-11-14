@@ -1,4 +1,13 @@
 extends CharacterBody2D
+class_name Player
+
+@onready var healthBar : UI = %HealthBar
+
+var health : int = 100 :
+	set(value):
+		health = value
+		if healthBar != null:
+			healthBar.set_health(value)
 
 var direction: Vector2 = Vector2.ZERO
 @export var speed: int = 50
@@ -16,8 +25,7 @@ func _process(_delta):
 		animations.play("move_up")
 	elif direction.x == 0:
 		animations.play("idle_forward")
-	
+
 func _physics_process(_delta):
 	velocity = direction * speed
 	move_and_slide()
-
