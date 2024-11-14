@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c3wduqbava3xs"]
+[gd_scene load_steps=33 format=3 uid="uid://c3wduqbava3xs"]
 
 [ext_resource type="Script" path="res://rat.gd" id="1_covdo"]
 [ext_resource type="Texture2D" uid="uid://q0krrhgwv365" path="res://assets/Rat/Rat_Idle.png" id="1_we0iy"]
@@ -197,6 +197,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_qqf8k"]
 radius = 57.0351
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8b2up"]
+radius = 8.0
+height = 24.0
+
 [node name="Rat" type="Node2D"]
 script = ExtResource("1_covdo")
 
@@ -220,5 +224,18 @@ frame_progress = 0.0318636
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_qqf8k")
 
+[node name="attackTimer" type="Timer" parent="."]
+
+[node name="attackArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackArea"]
+position = Vector2(1, -5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8b2up")
+
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="attackTimer" to="." method="attack"]
+[connection signal="body_entered" from="attackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="attackArea" to="." method="_on_attack_area_body_exited"]

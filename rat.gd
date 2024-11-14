@@ -11,9 +11,18 @@ func _physics_process(delta: float) -> void:
 			sprite.flip_h = true
 	else:
 		sprite.play("idle")
+
+#changes the chase state var
 func _on_detection_area_body_entered(body:Node2D) -> void:
-	self.body_entered(body)
-
-
+	self.range_body_entered(body)
 func _on_detection_area_body_exited(body:Node2D) -> void:
-	self.body_exited(body)
+	self.range_body_exited(body)
+
+#checks if player is in range of melee attack
+func _on_attack_area_body_entered(body:Node2D) -> void:
+	if(body is Player):
+		self.start_attack_timer()
+func _on_attack_area_body_exited(body:Node2D) -> void:
+	if(body is Player):
+		self.stop_attack_timer()
+		

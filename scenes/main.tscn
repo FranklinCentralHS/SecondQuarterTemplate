@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://chl23sse3226y"]
+[gd_scene load_steps=10 format=3 uid="uid://chl23sse3226y"]
 
 [ext_resource type="Texture2D" uid="uid://023lyws6b8ea" path="res://assets/tiles/tileset.png" id="1_rcm8w"]
 [ext_resource type="Texture2D" uid="uid://b8m477qsfgmlt" path="res://assets/tiles/Wall Tiles.png" id="2_si0g5"]
 [ext_resource type="PackedScene" uid="uid://2f5m5yvx1n14" path="res://scenes/player.tscn" id="3_c7nce"]
+[ext_resource type="PackedScene" uid="uid://5e8m03f4i88d" path="res://scenes/slime.tscn" id="4_13vry"]
+[ext_resource type="PackedScene" uid="uid://c3wduqbava3xs" path="res://scenes/rat.tscn" id="5_i2ee4"]
+[ext_resource type="PackedScene" uid="uid://rnrr2bf7kkv0" path="res://scenes/bat.tscn" id="6_flmyw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3tah"]
 texture = ExtResource("1_rcm8w")
@@ -546,3 +549,12 @@ layer_2/tile_data = PackedInt32Array(-720917, 327680, 1, -655381, 327680, 1, -58
 
 [node name="player" parent="." instance=ExtResource("3_c7nce")]
 position = Vector2(-67, 40)
+
+[node name="slime" parent="." instance=ExtResource("4_13vry")]
+position = Vector2(30, 31)
+
+[node name="Rat" parent="." instance=ExtResource("5_i2ee4")]
+position = Vector2(-121, -65)
+
+[node name="Bat" parent="." instance=ExtResource("6_flmyw")]
+position = Vector2(138, -89)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://5e8m03f4i88d"]
+[gd_scene load_steps=23 format=3 uid="uid://5e8m03f4i88d"]
 
 [ext_resource type="Texture2D" uid="uid://cggallgouya18" path="res://assets/enemy/Slime Idle.png" id="1_illfp"]
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_xpvnm"]
@@ -129,6 +129,9 @@ height = 18.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_rgi3t"]
 radius = 41.1096
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ysp5n"]
+radius = 9.0
+
 [node name="slime" type="Node2D"]
 script = ExtResource("1_xpvnm")
 speed = 125
@@ -154,5 +157,17 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
 shape = SubResource("CircleShape2D_rgi3t")
 
+[node name="attackTimer" type="Timer" parent="."]
+
+[node name="attackArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackArea"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_ysp5n")
+
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="attackTimer" to="." method="attack"]
+[connection signal="body_entered" from="attackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="attackArea" to="." method="_on_attack_area_body_exited"]
