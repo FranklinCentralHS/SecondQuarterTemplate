@@ -1,13 +1,17 @@
 extends enemy
 
 func _process(delta: float) -> void:
-	if player_chase == true:
-		self.position += (player.position - self.position)/speed
-		
-		if (player.position.x - self.position.x) > 0:
-			sprite.flip_h = false
+	if attacking == false:
+		if player_chase == true:
+			self.position += (player.position - self.position)/speed
+			
+			sprite.play("moving")
+			if (player.position.x - self.position.x) > 0:
+				sprite.flip_h = false
+			else:
+				sprite.flip_h = true
 		else:
-			sprite.flip_h = true
+			sprite.play("idle")
 
 #changes the state chase var
 func _on_detection_area_body_entered(body:Node2D) -> void:

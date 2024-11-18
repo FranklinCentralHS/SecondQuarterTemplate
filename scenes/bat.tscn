@@ -120,7 +120,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pn3jj")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -176,7 +176,24 @@ animations = [{
 "texture": SubResource("AtlasTexture_4n26m")
 }],
 "loop": true,
-"name": &"fly",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dj4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyh0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rl08n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n26m")
+}],
+"loop": true,
+"name": &"moving",
 "speed": 5.0
 }]
 
@@ -200,8 +217,8 @@ shape = SubResource("CircleShape2D_lvg4n")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_k3caw")
-animation = &"fly"
-autoplay = "fly"
+animation = &"moving"
+autoplay = "idle"
 
 [node name="detectionArea" type="Area2D" parent="."]
 collision_layer = 2

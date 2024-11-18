@@ -129,7 +129,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s1ol1")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -190,7 +190,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_py8jj")
 }],
 "loop": true,
-"name": &"run",
+"name": &"moving",
 "speed": 5.0
 }]
 
@@ -214,9 +214,8 @@ shape = SubResource("CapsuleShape2D_wpqhc")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_ykcsv")
-animation = &"attack"
+animation = &"moving"
 autoplay = "idle"
-frame_progress = 0.0318636
 
 [node name="detectionArea" type="Area2D" parent="."]
 

@@ -33,12 +33,12 @@ func range_body_exited(body:Node2D):
 #starts attack cooldown
 func start_attack_timer():
 	attackTimer.start()
-	print("in")
+	attacking = true
 
 #stops attack cooldown
 func stop_attack_timer():
 	attackTimer.stop()
-	print("out")
+	attacking = false
 
 func attack():
-	print("attack")
+	sprite.play("attack")
