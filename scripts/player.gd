@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var direction: Vector2 = Vector2.ZERO
-@export var speed: int = 50
+@export var speed: int = 50000
 @onready var animations = $AnimatedSprite2D
 
 func _process(_delta):
@@ -20,4 +20,3 @@ func _process(_delta):
 func _physics_process(_delta):
 	velocity = direction * speed
 	move_and_slide()
-
