@@ -20,7 +20,7 @@ func _process(_delta):
 	if Input.is_action_pressed("attack"):
 			animations.play("attack_front")
 			isAttacking = true
-	
+
 
 func _physics_process(_delta):
 	if isAttacking == false:
@@ -30,11 +30,8 @@ func _physics_process(_delta):
 			speed = 150
 		else:
 			speed = 100
-	
+
 
 func _on_animated_sprite_2d_animation_finished():
-	print(animations.animation)
 	if animations.animation == "attack_front":
-		print ("animation_stop")
 		isAttacking = false
-
