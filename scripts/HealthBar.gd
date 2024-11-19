@@ -9,4 +9,5 @@ func _on_ready():
 
 
 func set_health(newHealth):
-	rectangle.value += 10
+	print("set health called")
+	rectangle.value += 20

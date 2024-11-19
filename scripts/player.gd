@@ -6,6 +6,7 @@ class_name Player
 var health : int = 100 :
 	set(value):
 		health = value
+		print("Health setter called")
 		if healthBar != null:
 			healthBar.set_health(value)
 
