@@ -62,7 +62,5 @@ func _physics_process(_delta):
 
 
 func _on_animated_sprite_2d_animation_finished():
-	print(animations.animation)
 	if animations.animation == "attack_down" or "attack_up" or "attack_left" or "attack_right":
-		print ("animation_stop")
 		isAttacking = false
