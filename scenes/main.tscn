@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://chl23sse3226y"]
+[gd_scene load_steps=10 format=3 uid="uid://chl23sse3226y"]
 
 [ext_resource type="Texture2D" uid="uid://023lyws6b8ea" path="res://assets/tiles/tileset.png" id="1_rcm8w"]
+[ext_resource type="PackedScene" uid="uid://cdt2c6j76n3pv" path="res://scenes/HealthBar.tscn" id="1_sy6cf"]
 [ext_resource type="Texture2D" uid="uid://b8m477qsfgmlt" path="res://assets/tiles/Wall Tiles.png" id="2_si0g5"]
 [ext_resource type="PackedScene" uid="uid://2f5m5yvx1n14" path="res://scenes/player.tscn" id="3_c7nce"]
-[ext_resource type="PackedScene" uid="uid://cbjlvadecbwhj" path="res://scenes/heart.tscn" id="4_2ragg"]
-[ext_resource type="PackedScene" uid="uid://cj0ab7ta44d44" path="res://scenes/HealthBar.tscn" id="5_0c6t0"]
 [ext_resource type="Script" path="res://scripts/player_camera.gd" id="4_tbom0"]
+[ext_resource type="PackedScene" uid="uid://cbjlvadecbwhj" path="res://scenes/heart.tscn" id="6_al5s0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3tah"]
 texture = ExtResource("1_rcm8w")
@@ -537,6 +537,9 @@ sources/1 = SubResource("TileSetAtlasSource_ch4c0")
 position = Vector2(576, 320)
 metadata/_edit_horizontal_guides_ = [-334.0]
 
+[node name="HealthBar" parent="." instance=ExtResource("1_sy6cf")]
+unique_name_in_owner = true
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1lnuf")
 format = 2
@@ -548,18 +551,17 @@ layer_2/tile_data = PackedInt32Array(-720917, 327680, 1, -655381, 327680, 1, -58
 
 [node name="player" parent="." instance=ExtResource("3_c7nce")]
 position = Vector2(-67, 40)
+speed = 100
 
-[node name="playercamera" type="Camera2D" parent="player"]
+[node name="playercamera" type="Camera2D" parent="player" node_paths=PackedStringArray("tilemap")]
 position = Vector2(67, -40)
 limit_left = 0
 limit_top = 0
 limit_right = 1152
 limit_bottom = 640
 position_smoothing_enabled = true
+script = ExtResource("4_tbom0")
+tilemap = NodePath("../../TileMap")
 
-[node name="HealthBar" parent="." instance=ExtResource("5_0c6t0")]
-unique_name_in_owner = true
-health = 100
-
-[node name="Heart" parent="." instance=ExtResource("4_2ragg")]
-position = Vector2(39, 8)
+[node name="Heart" parent="." instance=ExtResource("6_al5s0")]
+position = Vector2(-18, 39)
