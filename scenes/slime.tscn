@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://5e8m03f4i88d"]
+[gd_scene load_steps=25 format=3 uid="uid://cyvpf3umoirk1"]
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_xpvnm"]
 [ext_resource type="Texture2D" uid="uid://8k8inbjxf43i" path="res://assets/Slime/Slime_Spiked_Jump.png" id="2_qqdvv"]

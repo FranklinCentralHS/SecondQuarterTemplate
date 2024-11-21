@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://rnrr2bf7kkv0"]
+[gd_scene load_steps=31 format=3 uid="uid://crn5d7d0nfk5y"]
 
 [ext_resource type="Script" path="res://scripts/bat.gd" id="1_5o5a6"]
 [ext_resource type="Texture2D" uid="uid://s7ukem1xhfqr" path="res://assets/Bat/Bat_Attack.png" id="2_hd6ln"]
