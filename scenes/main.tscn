@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://chl23sse3226y"]
+[gd_scene load_steps=10 format=3 uid="uid://chl23sse3226y"]
 
 [ext_resource type="Texture2D" uid="uid://023lyws6b8ea" path="res://assets/tiles/tileset.png" id="1_rcm8w"]
 [ext_resource type="Texture2D" uid="uid://b8m477qsfgmlt" path="res://assets/tiles/Wall Tiles.png" id="2_si0g5"]
 [ext_resource type="PackedScene" uid="uid://2f5m5yvx1n14" path="res://scenes/player.tscn" id="3_c7nce"]
 [ext_resource type="Script" path="res://scripts/player_camera.gd" id="4_tbom0"]
 [ext_resource type="PackedScene" uid="uid://k8b7mynt7hrq" path="res://scenes/spike_trap.tscn" id="5_l8ea3"]
+[ext_resource type="PackedScene" uid="uid://c282pejhduy5u" path="res://scenes/bear_trap.tscn" id="6_g4ib8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3tah"]
 texture = ExtResource("1_rcm8w")
@@ -560,3 +561,6 @@ limit_bottom = 640
 position_smoothing_enabled = true
 script = ExtResource("4_tbom0")
 tilemap = NodePath("../../TileMap")
+
+[node name="bear_trap" parent="." instance=ExtResource("6_g4ib8")]
+position = Vector2(-30, -11)
