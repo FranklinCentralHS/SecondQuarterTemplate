@@ -3,12 +3,13 @@ extends CharacterBody2D
 
 enum Directions {UP, DOWN, LEFT, RIGHT}
 
-var isAttacking = false
-var direction: Vector2 = Vector2.ZERO
+
 @export var speed: int = 100
 @onready var animations : AnimatedSprite2D = $AnimatedSprite2D
 var facing : Directions = Directions.DOWN
-
+var health = 100
+var isAttacking = false
+var direction: Vector2 = Vector2.ZERO
 
 func _process(_delta):
 	direction = Input.get_vector("left", "right", "up", "down")
@@ -57,6 +58,7 @@ func _physics_process(_delta):
 		move_and_slide()
 		if Input.is_action_pressed("sprint"):
 			speed = 150
+			
 		else:
 			speed = 100
 
