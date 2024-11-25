@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://cylhor7tdt60h"]
 
 [ext_resource type="Script" path="res://scripts/spike_trap.gd" id="1_k4inf"]
-[ext_resource type="Texture2D" path="res://assets/traps/Spike Trap.png" id="2_tc57q"]
+[ext_resource type="Texture2D" uid="uid://dlh0a74s867o7" path="res://assets/traps/Spike Trap.png" id="2_tc57q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iw6gq"]
 atlas = ExtResource("2_tc57q")
@@ -124,11 +124,16 @@ deployedTime = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_iygmy")
-animation = &"deploying"
+animation = &"retracting"
+frame = 3
+frame_progress = 1.0
 
 [node name="deployTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="rechargeTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
 
 [node name="detectionArea" type="Area2D" parent="."]
 
