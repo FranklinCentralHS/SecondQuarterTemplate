@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://bu26wpy1g3usp"]
+
+[ext_resource type="Script" path="res://scripts/bear_trap.gd" id="1_bwloh"]
+[ext_resource type="Texture2D" uid="uid://dcvx3lb72kjdo" path="res://assets/traps/Bear_Trap.png" id="2_8mxhu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ni6q"]
+atlas = ExtResource("2_8mxhu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cbgc"]
+atlas = ExtResource("2_8mxhu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2myqa"]
+atlas = ExtResource("2_8mxhu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwuxp"]
+atlas = ExtResource("2_8mxhu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bivfe"]
+atlas = ExtResource("2_8mxhu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oos5l"]
+atlas = ExtResource("2_8mxhu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npsif"]
+atlas = ExtResource("2_8mxhu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbk2k"]
+atlas = ExtResource("2_8mxhu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f4ssd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ni6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cbgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2myqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwuxp")
+}],
+"loop": false,
+"name": &"closing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bivfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oos5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npsif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbk2k")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4klgi"]
+
+[node name="bear_trap" type="Node2D"]
+script = ExtResource("1_bwloh")
+state = "active"
+rechargeTime = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f4ssd")
+animation = &"opening"
+frame = 3
+frame_progress = 1.0
+
+[node name="rechargeTimer" type="Timer" parent="."]
+
+[node name="detectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_4klgi")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="rechargeTimer" to="." method="_on_recharge_timer_timeout"]
+[connection signal="area_entered" from="detectionArea" to="." method="_on_detection_area_area_entered"]
