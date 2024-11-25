@@ -1,9 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://ppitousn7v3q"]
+[gd_scene load_steps=25 format=3 uid="uid://cyvpf3umoirk1"]
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_xpvnm"]
-[ext_resource type="Texture2D" path="res://assets/Slime/Slime_Spiked_Jump.png" id="2_qqdvv"]
-[ext_resource type="Texture2D" path="res://assets/Slime/Slime_Spiked_Idle.png" id="3_4kej3"]
-[ext_resource type="Texture2D" path="res://assets/Slime/Slime_Spiked_Run.png" id="4_ydwmq"]
+[ext_resource type="Texture2D" uid="uid://8k8inbjxf43i" path="res://assets/Slime/Slime_Spiked_Jump.png" id="2_qqdvv"]
+[ext_resource type="Texture2D" uid="uid://bqsd0xbymue1n" path="res://assets/Slime/Slime_Spiked_Idle.png" id="3_4kej3"]
+[ext_resource type="Texture2D" uid="uid://b6h3577bfw65n" path="res://assets/Slime/Slime_Spiked_Run.png" id="4_ydwmq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ocp4w"]
 atlas = ExtResource("2_qqdvv")

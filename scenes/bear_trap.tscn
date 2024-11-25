@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bu26wpy1g3usp"]
 
 [ext_resource type="Script" path="res://scripts/bear_trap.gd" id="1_bwloh"]
-[ext_resource type="Texture2D" uid="uid://dcvx3lb72kjdo" path="res://assets/traps/Bear_Trap.png" id="2_8mxhu"]
+[ext_resource type="Texture2D" path="res://assets/traps/Bear_Trap.png" id="2_8mxhu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ni6q"]
 atlas = ExtResource("2_8mxhu")
@@ -81,10 +81,10 @@ rechargeTime = 3
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_f4ssd")
 animation = &"opening"
-autoplay = "opening"
+frame = 3
+frame_progress = 1.0
 
 [node name="rechargeTimer" type="Timer" parent="."]
-one_shot = true
 
 [node name="detectionArea" type="Area2D" parent="."]
 
