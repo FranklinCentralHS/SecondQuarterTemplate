@@ -48,17 +48,15 @@ func _process(_delta):
 			animations.play("idle_up")
 	#Attack Update
 	if Input.is_action_pressed("attack"):
-		isAttacking = true
-		if facing == Directions.LEFT && isAttacking == true:
-			animations.play("attack_left")
-		elif facing == Directions.RIGHT && isAttacking == true:
-			animations.play("attack_right")
-		elif facing == Directions.DOWN && isAttacking == true:
-			animations.play("attack_down")
-		elif facing == Directions.UP && isAttacking == true:
-			animations.play("attack_up")
-
-
+			isAttacking = true
+			if facing == Directions.LEFT && isAttacking == true:
+				animations.play("attack_left")
+			elif facing == Directions.RIGHT && isAttacking == true:
+				animations.play("attack_right")
+			elif facing == Directions.DOWN && isAttacking == true:
+				animations.play("attack_down")
+			elif facing == Directions.UP && isAttacking == true:
+				animations.play("attack_up")
 
 
 func _physics_process(_delta):
