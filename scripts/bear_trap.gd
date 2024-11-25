@@ -7,11 +7,8 @@ extends trap
 func _ready() -> void:
 	rechargeTimer.wait_time = rechargeTime
 
-
-
-
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if state == "inactive":
+	if state == "opening":
 		state = "active"
 
 
@@ -22,8 +19,8 @@ func _on_detection_area_area_entered(area:Area2D) -> void:
 			sprite.play("closing")
 			state = "inactive"
 			rechargeTimer.start()
-			print("works")
 
 
 func _on_recharge_timer_timeout() -> void:
 	sprite.play("opening")
+	state = "opening"

@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://chl23sse3226y"]
+[gd_scene load_steps=12 format=3 uid="uid://chl23sse3226y"]
 
 [ext_resource type="Texture2D" uid="uid://023lyws6b8ea" path="res://assets/tiles/tileset.png" id="1_rcm8w"]
 [ext_resource type="Texture2D" uid="uid://b8m477qsfgmlt" path="res://assets/tiles/Wall Tiles.png" id="2_si0g5"]
 [ext_resource type="PackedScene" uid="uid://2f5m5yvx1n14" path="res://scenes/player.tscn" id="3_c7nce"]
-[ext_resource type="PackedScene" uid="uid://ppitousn7v3q" path="res://scenes/slime.tscn" id="4_13vry"]
+[ext_resource type="PackedScene" uid="uid://cyvpf3umoirk1" path="res://scenes/slime.tscn" id="4_13vry"]
 [ext_resource type="PackedScene" path="res://scenes/rat.tscn" id="5_i2ee4"]
-[ext_resource type="PackedScene" uid="uid://cdjobvegf55bj" path="res://scenes/bat.tscn" id="6_flmyw"]
+[ext_resource type="PackedScene" uid="uid://crn5d7d0nfk5y" path="res://scenes/bat.tscn" id="6_flmyw"]
 [ext_resource type="PackedScene" uid="uid://cylhor7tdt60h" path="res://scenes/spike_trap.tscn" id="7_ja1n4"]
 [ext_resource type="PackedScene" uid="uid://bu26wpy1g3usp" path="res://scenes/bear_trap.tscn" id="8_uunba"]
 
@@ -552,7 +552,6 @@ layer_2/tile_data = PackedInt32Array(-720917, 327680, 1, -655381, 327680, 1, -58
 
 [node name="player" parent="." instance=ExtResource("3_c7nce")]
 position = Vector2(-20, 42)
-collision_layer = 3
 
 [node name="playercamera" type="Camera2D" parent="player"]
 position = Vector2(67, -40)
