@@ -1,6 +1,15 @@
 extends CharacterBody2D
 class_name Player
 
+@onready var healthBar : UI = %HealthBar
+
+var health : int = 100 :
+	set(value):
+		health = value
+		print("Health setter called")
+		if healthBar != null:
+			healthBar.set_health(value)
+
 
 enum Directions {UP, DOWN, LEFT, RIGHT}
 
