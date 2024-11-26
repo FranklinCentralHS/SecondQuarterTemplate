@@ -1,0 +1,22 @@
+Changes Ty:
+created player movement and animations
+created a basic sprint
+made idle animations
+made a player camera kinda
+made movement animations
+
+Changes Owen:
+created bat, rat, and slime
+created enemy class
+started attack system for the enemy
+
+Changes Inder:
+created backgroumg music
+
+Changes Ashton:
+maybe made kinda a map
+
+Changes Bryce
+animated heart
+made a health bar
+made health bar work and hearts have value

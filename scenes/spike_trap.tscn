@@ -1,0 +1,146 @@
+[gd_scene load_steps=19 format=3 uid="uid://cylhor7tdt60h"]
+
+[ext_resource type="Script" path="res://scripts/spike_trap.gd" id="1_k4inf"]
+[ext_resource type="Texture2D" uid="uid://dlh0a74s867o7" path="res://assets/traps/Spike Trap.png" id="2_tc57q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw6gq"]
+atlas = ExtResource("2_tc57q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdq06"]
+atlas = ExtResource("2_tc57q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pkvv"]
+atlas = ExtResource("2_tc57q")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1o8ef"]
+atlas = ExtResource("2_tc57q")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inggs"]
+atlas = ExtResource("2_tc57q")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0q21"]
+atlas = ExtResource("2_tc57q")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej282"]
+atlas = ExtResource("2_tc57q")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa6e3"]
+atlas = ExtResource("2_tc57q")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_regwj"]
+atlas = ExtResource("2_tc57q")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfs0g"]
+atlas = ExtResource("2_tc57q")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiw1t"]
+atlas = ExtResource("2_tc57q")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0dwd"]
+atlas = ExtResource("2_tc57q")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjdsr"]
+atlas = ExtResource("2_tc57q")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyfsw"]
+atlas = ExtResource("2_tc57q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iygmy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw6gq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdq06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pkvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1o8ef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inggs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0q21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej282")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sa6e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_regwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfs0g")
+}],
+"loop": false,
+"name": &"deploying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiw1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0dwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjdsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyfsw")
+}],
+"loop": false,
+"name": &"retracting",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqhkf"]
+size = Vector2(28, 24)
+
+[node name="spikeTrap" type="Node2D"]
+script = ExtResource("1_k4inf")
+rechargeTime = 2
+deployedTime = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iygmy")
+animation = &"retracting"
+frame = 3
+frame_progress = 1.0
+
+[node name="deployTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="rechargeTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="detectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_oqhkf")
+
+[connection signal="timeout" from="deployTimer" to="." method="_on_deploy_timer_timeout"]
+[connection signal="timeout" from="rechargeTimer" to="." method="_on_recharge_timer_timeout"]
+[connection signal="area_entered" from="detectionArea" to="." method="_on_area_2d_area_entered"]
