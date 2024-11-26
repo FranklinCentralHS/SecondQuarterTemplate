@@ -584,6 +584,7 @@ height = 18.0
 position = Vector2(0, -9)
 collision_layer = 3
 script = ExtResource("1_4etik")
+speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1ubb")

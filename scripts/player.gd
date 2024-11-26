@@ -17,7 +17,6 @@ enum Directions {UP, DOWN, LEFT, RIGHT}
 @export var speed: int = 100
 @onready var animations : AnimatedSprite2D = $AnimatedSprite2D
 var facing : Directions = Directions.DOWN
-var health = 100
 var isAttacking = false
 var direction: Vector2 = Vector2.ZERO
 
