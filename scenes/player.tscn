@@ -587,8 +587,9 @@ script = ExtResource("1_4etik")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1ubb")
-animation = &"attack_down"
-autoplay = "idle_down"
+animation = &"idle_forward"
+autoplay = "idle_forward"
+frame_progress = 0.783463
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
