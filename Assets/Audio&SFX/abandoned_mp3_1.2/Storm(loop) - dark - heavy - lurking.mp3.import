@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1kibqm244mti"
+path="res://.godot/imported/Storm(loop) - dark - heavy - lurking.mp3-516f952ea2481fdf9a741a15db2f8fad.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio&SFX/abandoned_mp3_1.2/Storm(loop) - dark - heavy - lurking.mp3"
+dest_files=["res://.godot/imported/Storm(loop) - dark - heavy - lurking.mp3-516f952ea2481fdf9a741a15db2f8fad.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://dai2n1ckaoxx5"]
+
+[ext_resource type="Texture2D" uid="uid://cmem34hwwk8ty" path="res://Assets/sprites/Bald Man.png" id="1_bvg0v"]
+[ext_resource type="PackedScene" uid="uid://cf0fm8ornquw0" path="res://Dialogue/bald_man_d.tscn" id="2_6x2uf"]
+
+[sub_resource type="GDScript" id="GDScript_3co1c"]
+script/source = "extends CharacterBody2D
+
+const speed = 0
+
+var player_in_chat_zone = false
+
+
+func _on_area_2d_body_entered(body):
+	if body is Player:
+		player_in_chat_zone = true
+		$\"Bald Man D\"/Label.visible = true
+
+
+
+func _on_area_2d_body_exited(body):
+	if body is Player:
+		player_in_chat_zone = false
+		$\"Bald Man D\"/Label.visible = false
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_emkdp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bvg0v")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_frf0y"]
+radius = 4.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n0fh2"]
+radius = 15.0
+height = 50.0
+
+[node name="Bald Man NPC" type="CharacterBody2D"]
+script = SubResource("GDScript_3co1c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(35, 14)
+scale = Vector2(0.483333, 0.633333)
+sprite_frames = SubResource("SpriteFrames_emkdp")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(33, 16)
+shape = SubResource("CapsuleShape2D_frf0y")
+
+[node name="chat_detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection"]
+position = Vector2(33, 19)
+shape = SubResource("CapsuleShape2D_n0fh2")
+
+[node name="Bald Man D" parent="." instance=ExtResource("2_6x2uf")]
+offset_left = 9.0
+offset_top = -20.0
+offset_right = 9.0
+offset_bottom = -20.0
+
+[connection signal="body_entered" from="chat_detection" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="chat_detection" to="." method="_on_area_2d_body_exited"]

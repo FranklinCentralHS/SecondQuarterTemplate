@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmxrek4qpcxpk"]
+
+[ext_resource type="Script" path="res://Dialogue/dialogue.gd" id="1_jkmve"]
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jkmve")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.07, 0.07, 0.07, 1)
+layout_mode = 0
+offset_right = 335.0
+offset_bottom = 101.0
+scale = Vector2(0.2, 0.2)
+text = "Hello, Young Man, many have been stranded here before you. There are parts to fix your car here, but you'll have to find them. Be careful and stay in the light."
+autowrap_mode = 3

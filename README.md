@@ -6,7 +6,8 @@
 * Movement and Collision
 * Enemies and Traps
 * Tilemaps and Worldbuilding
-* ?
+* Inventory
+* Sanity
 
 ### Examples/Locations of Implemented Features for Grading
 * Inheritance - 

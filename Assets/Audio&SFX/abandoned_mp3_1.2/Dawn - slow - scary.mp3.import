@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cr7g0u1hyuqxn"
+path="res://.godot/imported/Dawn - slow - scary.mp3-d8a431df3eaaa47c53ebcb733847c1be.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio&SFX/abandoned_mp3_1.2/Dawn - slow - scary.mp3"
+dest_files=["res://.godot/imported/Dawn - slow - scary.mp3-d8a431df3eaaa47c53ebcb733847c1be.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://k7mpqlcssxwl"
+path="res://.godot/imported/Survivor - ending - lonely - sad - strings.wav-349e0c754ab0bc53a1e9338fe219b8e9.sample"
+
+[deps]
+
+source_file="res://Assets/Audio&SFX/abandoned_wav_1.2/Survivor - ending - lonely - sad - strings.wav"
+dest_files=["res://.godot/imported/Survivor - ending - lonely - sad - strings.wav-349e0c754ab0bc53a1e9338fe219b8e9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

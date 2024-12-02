@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dshvqw3dgt7ip"
+path="res://.godot/imported/Survivor - ending - lonely - sad - strings.mp3-bef95d2b3d3872fe65f6aec68c0e63a7.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio&SFX/abandoned_mp3_1.2/Survivor - ending - lonely - sad - strings.mp3"
+dest_files=["res://.godot/imported/Survivor - ending - lonely - sad - strings.mp3-bef95d2b3d3872fe65f6aec68c0e63a7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

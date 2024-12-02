@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chubpaoowdt2q"
+path="res://.godot/imported/Storm - dark - heavy - lurking.mp3-c92445f885ad35340cb25d58d92e1639.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio&SFX/abandoned_mp3_1.2/Storm - dark - heavy - lurking.mp3"
+dest_files=["res://.godot/imported/Storm - dark - heavy - lurking.mp3-c92445f885ad35340cb25d58d92e1639.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

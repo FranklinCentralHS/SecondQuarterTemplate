@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccvvq7vmab8in"]
+
+[ext_resource type="Script" path="res://Scripts/GUI/settings_menu.gd" id="1_ao761"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vkib"]
+bg_color = Color(0.0678876, 0.0539872, 0.315609, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 21
+shadow_offset = Vector2(0.615, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5iuef"]
+bg_color = Color(0.0312893, 0.0221276, 0.204302, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(6.9188e-08, 0.11321, 0.10217, 0.6)
+shadow_size = 21
+shadow_offset = Vector2(0.615, 0)
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ao761")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1733.0
+offset_top = 991.0
+offset_right = 2141.0
+offset_bottom = 1234.0
+scale = Vector2(0.449989, 0.351218)
+theme_override_font_sizes/font_size = 176
+theme_override_styles/hover = SubResource("StyleBoxFlat_5vkib")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5iuef")
+text = "Back"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_exit_button_pressed"]

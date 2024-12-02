@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf0fm8ornquw0"]
+
+[ext_resource type="Script" path="res://Dialogue/bald_man_d.gd" id="1_ckml1"]
+
+[node name="Bald Man D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ckml1")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 248.0
+offset_bottom = 75.0
+scale = Vector2(0.2, 0.2)
+text = "I think I saw a bear coming towards us. Be aware of where you walk."
+horizontal_alignment = 1
+autowrap_mode = 2
