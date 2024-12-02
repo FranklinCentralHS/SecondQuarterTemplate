@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vrvb8xljnp5y"
-path="res://.godot/imported/speen.png-89cd5800624453b14a180500650dffc5.ctex"
+path="res://.godot/imported/speen.png-c65733f6d6dae2d82bd0780a7c8ff0e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/GUI Bars/speen.png"
-dest_files=["res://.godot/imported/speen.png-89cd5800624453b14a180500650dffc5.ctex"]
+source_file="res://assets/Bat/speen.png"
+dest_files=["res://.godot/imported/speen.png-c65733f6d6dae2d82bd0780a7c8ff0e5.ctex"]
 
 [params]
 

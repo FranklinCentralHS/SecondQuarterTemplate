@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://cbjlvadecbwhj"]
+[gd_scene load_steps=15 format=3 uid="uid://d15bpuhewbkih"]
 
-[ext_resource type="Texture2D" uid="uid://vrvb8xljnp5y" path="res://assets/GUI Bars/speen.png" id="1_ii1n3"]
+[ext_resource type="Texture2D" uid="uid://vrvb8xljnp5y" path="res://assets/Bat/speen.png" id="1_ii1n3"]
 [ext_resource type="Script" path="res://scripts/heart.gd" id="1_kkct5"]
 [ext_resource type="AudioStream" uid="uid://b2xjiy5vgkyup" path="res://SFX/magical_1.ogg" id="3_ouoft"]
 

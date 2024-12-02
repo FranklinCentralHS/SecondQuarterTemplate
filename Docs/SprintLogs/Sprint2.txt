@@ -1,0 +1,14 @@
+Changes Ty:
+directional movement animations
+directional attack animations
+Changes Ashton
+made a map including several areas
+created collision and a collision layer
+changes Inder:
+fixed the background music
+commited to the main
+Chnages Bryce
+fix merge conflicts between my branch of pick ups and the branch of the health with the main so that it actually works with everyone elses stuff
+Changes Owen:
+worked on enemies
+created 2 traps
