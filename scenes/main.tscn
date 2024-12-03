@@ -532,7 +532,6 @@ sources/0 = SubResource("TileSetAtlasSource_l3tah")
 sources/1 = SubResource("TileSetAtlasSource_ch4c0")
 
 [node name="main" type="Node2D"]
-position = Vector2(576, 320)
 metadata/_edit_horizontal_guides_ = [-334.0]
 
 [node name="TileMap" type="TileMap" parent="."]

@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 
 enum Directions {UP, DOWN, LEFT, RIGHT}
