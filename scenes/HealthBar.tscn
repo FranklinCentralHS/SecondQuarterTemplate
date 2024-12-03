@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnsij1v7xa0k"]
+
+[ext_resource type="Script" path="res://scripts/HealthBar.gd" id="1_twh2e"]
+[ext_resource type="PackedScene" uid="uid://dfcden2bam4jo" path="res://scenes/Resource_Meter.tscn" id="2_eompv"]
+[ext_resource type="Texture2D" uid="uid://dxxkwiq2vobx" path="res://assets/Bat/health meter-02.png" id="3_aykeu"]
+[ext_resource type="Texture2D" uid="uid://dofpgpp2sisvm" path="res://assets/Bat/health meter-03.png" id="4_a7m0p"]
+
+[node name="HealthBar" type="CanvasLayer"]
+script = ExtResource("1_twh2e")
+health = 300
+
+[node name="health_bar" parent="." instance=ExtResource("2_eompv")]
+value = 100.0
+texture_under = ExtResource("3_aykeu")
+texture_progress = ExtResource("4_a7m0p")
