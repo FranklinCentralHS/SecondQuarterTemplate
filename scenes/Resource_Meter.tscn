@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dfcden2bam4jo"]
+
+[node name="resource_bar" type="TextureProgressBar"]
+offset_left = -6.0
+offset_top = -1.0
+offset_right = 642.0
+offset_bottom = 129.0
+step = 0.01
+value = 50.0
+texture_progress_offset = Vector2(43, 43)
