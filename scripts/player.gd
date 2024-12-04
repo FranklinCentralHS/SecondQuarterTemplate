@@ -1,6 +1,15 @@
 extends CharacterBody2D
 class_name Player
 
+@onready var healthBar : UI = %HealthBar
+
+var health : int = 100 :
+	set(value):
+		print(value)
+		health = value
+		if healthBar != null:
+			healthBar.set_health(value)
+
 
 enum Directions {UP, DOWN, LEFT, RIGHT}
 
@@ -9,6 +18,8 @@ var direction: Vector2 = Vector2.ZERO
 @export var speed: int = 100
 @onready var animations : AnimatedSprite2D = $AnimatedSprite2D
 var facing : Directions = Directions.DOWN
+
+
 
 
 func _process(_delta):
