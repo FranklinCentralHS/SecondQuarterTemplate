@@ -535,14 +535,18 @@ texture = ExtResource("2_si0g5")
 
 [sub_resource type="TileSet" id="TileSet_1lnuf"]
 physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_l3tah")
 sources/1 = SubResource("TileSetAtlasSource_ch4c0")
 
 [node name="main" type="Node2D"]
+position = Vector2(576, 320)
 metadata/_edit_horizontal_guides_ = [-334.0]
 
 [node name="HealthBar" parent="." instance=ExtResource("1_sy6cf")]
 unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1lnuf")

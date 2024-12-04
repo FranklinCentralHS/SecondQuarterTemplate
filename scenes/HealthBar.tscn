@@ -8,3 +8,6 @@ script = ExtResource("1_twh2e")
 health = 300
 
 [node name="health_bar" parent="." instance=ExtResource("2_eompv")]
+value = 100.0
+texture_under = ExtResource("3_aykeu")
+texture_progress = ExtResource("4_a7m0p")
