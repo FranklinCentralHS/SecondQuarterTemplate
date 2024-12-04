@@ -7,7 +7,7 @@ func _process(delta: float) -> void:
 	if attacking == false:
 		if player_chase == true:
 			self.position += (player.position - self.position)/speed
-
+			
 			sprite.play("moving")
 			if (player.position.x - self.position.x) > 0:
 				sprite.flip_h = false

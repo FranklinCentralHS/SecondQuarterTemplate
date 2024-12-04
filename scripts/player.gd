@@ -20,6 +20,8 @@ var direction: Vector2 = Vector2.ZERO
 var facing : Directions = Directions.DOWN
 
 
+
+
 func _process(_delta):
 	direction = Input.get_vector("left", "right", "up", "down")
 	#MOVEMENT
