@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj0ab7ta44d44"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_pt6jq"]
+[ext_resource type="PackedScene" uid="uid://dfcden2bam4jo" path="res://scenes/Resource_Meter.tscn" id="2_13ika"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_pt6jq")
+
+[node name="health_bar" parent="." instance=ExtResource("2_13ika")]
+
+[node name="scroll" type="Node" parent="."]
+
+[node name="HScrollBar" type="HScrollBar" parent="scroll"]
+offset_left = 54.0
+offset_top = 158.0
+offset_right = 601.0
+offset_bottom = 214.0
+
+[node name="ProgressBar" type="ProgressBar" parent="scroll"]
+offset_left = 54.0
+offset_top = 240.0
+offset_right = 604.0
+offset_bottom = 373.0

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://eurbp1os4vay"]
+
+[ext_resource type="AudioStream" uid="uid://b6mfc7gbf30m7" path="res://scenes/dance-of-devils-giulio-fazio-main-version-01-15-14356.mp3" id="1_8u7vp"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_8u7vp")
+autoplay = true
