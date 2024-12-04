@@ -1,10 +1,10 @@
-extends enemy
+extends Enemy
 
 func _process(delta: float) -> void:
 	if attacking == false:
 		if player_chase == true:
 			self.position += (player.position - self.position)/speed
-			
+
 			sprite.play("moving")
 			if (player.position.x - self.position.x) > 0:
 				sprite.flip_h = false
@@ -26,4 +26,3 @@ func _on_attack_area_body_entered(body:Node2D) -> void:
 func _on_attack_area_body_exited(body:Node2D) -> void:
 	if(body is Player):
 		self.stop_attack_timer()
-		
