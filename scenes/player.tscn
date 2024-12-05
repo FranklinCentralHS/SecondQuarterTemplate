@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://2f5m5yvx1n14"]
+[gd_scene load_steps=84 format=3 uid="uid://b83lxavorfbdm"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_4etik"]
 [ext_resource type="Texture2D" uid="uid://dto5wi81pwegs" path="res://assets/player/orc3_idle_full.png" id="1_6x6nt"]
@@ -576,31 +576,90 @@ animations = [{
 radius = 11.0
 height = 34.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_on470"]
-radius = 5.0
-height = 18.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hb3e8"]
+radius = 15.5563
+height = 50.9117
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3oe83"]
+radius = 14.1421
+height = 49.4975
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nj0s8"]
+radius = 14.1421
+height = 53.7401
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onp04"]
+radius = 14.8492
+height = 46.6691
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_530xi"]
+radius = 50.04
 
 [node name="player" type="CharacterBody2D"]
 position = Vector2(0, -9)
 collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_4etik")
-speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1ubb")
-animation = &"idle_forward"
-autoplay = "idle_forward"
-frame_progress = 0.783463
+animation = &"attack_down"
+autoplay = "idle_down"
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_yqurl")
 
-[node name="playerBody" type="Area2D" parent="."]
+[node name="frontDetection" type="Area2D" parent="."]
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="playerBody"]
-position = Vector2(0, 8)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_on470")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frontDetection"]
+position = Vector2(13, 3)
+rotation = 0.785398
+shape = SubResource("CapsuleShape2D_hb3e8")
+
+[node name="backDetection" type="Area2D" parent="."]
+visible = false
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="backDetection"]
+position = Vector2(-3, -8)
+rotation = 0.785398
+shape = SubResource("CapsuleShape2D_3oe83")
+
+[node name="rightDetection" type="Area2D" parent="."]
+visible = false
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightDetection"]
+position = Vector2(14, 1)
+rotation = 0.785398
+shape = SubResource("CapsuleShape2D_nj0s8")
+
+[node name="leftDetection" type="Area2D" parent="."]
+visible = false
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftDetection"]
+position = Vector2(-12, 1)
+rotation = -0.785398
+shape = SubResource("CapsuleShape2D_onp04")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_530xi")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="frontDetection" to="." method="_on_front_detection_body_entered"]
+[connection signal="body_exited" from="frontDetection" to="." method="_on_front_detection_body_exited"]
+[connection signal="body_entered" from="backDetection" to="." method="_on_back_detection_body_entered"]
+[connection signal="body_exited" from="backDetection" to="." method="_on_back_detection_body_exited"]
+[connection signal="body_entered" from="rightDetection" to="." method="_on_right_detection_body_entered"]
+[connection signal="body_exited" from="rightDetection" to="." method="_on_right_detection_body_exited"]
+[connection signal="body_entered" from="leftDetection" to="." method="_on_left_detection_body_entered"]
+[connection signal="body_exited" from="leftDetection" to="." method="_on_left_detection_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

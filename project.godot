@@ -10,11 +10,14 @@ config_version=5
 
 [application]
 
-config/name="TemplateProject"
 config/name="Ogre's Paradise"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://SFX/default_bus_layout.tres"
 
 [display]
 

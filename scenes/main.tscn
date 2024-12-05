@@ -1,17 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://chl23sse3226y"]
+[gd_scene load_steps=11 format=3 uid="uid://chl23sse3226y"]
 
 [ext_resource type="Texture2D" uid="uid://023lyws6b8ea" path="res://assets/tiles/tileset.png" id="1_rcm8w"]
-[ext_resource type="PackedScene" uid="uid://cdt2c6j76n3pv" path="res://scenes/HealthBar.tscn" id="1_sy6cf"]
 [ext_resource type="Texture2D" uid="uid://b8m477qsfgmlt" path="res://assets/tiles/Wall Tiles.png" id="2_si0g5"]
-[ext_resource type="PackedScene" uid="uid://2f5m5yvx1n14" path="res://scenes/player.tscn" id="3_c7nce"]
-[ext_resource type="PackedScene" uid="uid://eurbp1os4vay" path="res://scenes/audio_stream_player.tscn" id="4_r2ttq"]
-[ext_resource type="PackedScene" path="res://scenes/slime.tscn" id="4_13vry"]
-[ext_resource type="Script" path="res://scripts/player_camera.gd" id="4_tbom0"]
-[ext_resource type="PackedScene" uid="uid://yq5feqal4hl4" path="res://scenes/rat.tscn" id="5_i2ee4"]
-[ext_resource type="PackedScene" uid="uid://d15bpuhewbkih" path="res://scenes/heart.tscn" id="6_al5s0"]
-[ext_resource type="PackedScene" path="res://scenes/bat.tscn" id="6_flmyw"]
-[ext_resource type="PackedScene" path="res://scenes/spike_trap.tscn" id="7_ja1n4"]
-[ext_resource type="PackedScene" path="res://scenes/bear_trap.tscn" id="8_uunba"]
+[ext_resource type="PackedScene" uid="uid://b83lxavorfbdm" path="res://scenes/player.tscn" id="3_c7nce"]
+[ext_resource type="PackedScene" uid="uid://cyvpf3umoirk1" path="res://scenes/slime.tscn" id="4_13vry"]
+[ext_resource type="PackedScene" uid="uid://jr2c4eaj23se" path="res://scenes/rat.tscn" id="5_i2ee4"]
+[ext_resource type="PackedScene" uid="uid://crn5d7d0nfk5y" path="res://scenes/bat.tscn" id="6_flmyw"]
+[ext_resource type="PackedScene" uid="uid://eurbp1os4vay" path="res://scenes/audio_stream_player.tscn" id="7_2th0w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3tah"]
 texture = ExtResource("1_rcm8w")
@@ -536,18 +531,11 @@ texture = ExtResource("2_si0g5")
 
 [sub_resource type="TileSet" id="TileSet_1lnuf"]
 physics_layer_0/collision_layer = 1
-physics_layer_1/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_l3tah")
 sources/1 = SubResource("TileSetAtlasSource_ch4c0")
 
 [node name="main" type="Node2D"]
-position = Vector2(576, 320)
 metadata/_edit_horizontal_guides_ = [-334.0]
-
-[node name="HealthBar" parent="." instance=ExtResource("1_sy6cf")]
-unique_name_in_owner = true
-scale = Vector2(0.5, 0.5)
-transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1lnuf")
@@ -562,9 +550,8 @@ layer_2/tile_data = PackedInt32Array(-720917, 327680, 1, -655381, 327680, 1, -58
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="player" parent="." instance=ExtResource("3_c7nce")]
-position = Vector2(-67, 40)
+position = Vector2(-20, 42)
 
-[node name="AudioStreamPlayer" parent="." instance=ExtResource("4_r2ttq")]
 [node name="playercamera" type="Camera2D" parent="player"]
 position = Vector2(67, -40)
 limit_left = 0
@@ -572,10 +559,6 @@ limit_top = 0
 limit_right = 1152
 limit_bottom = 640
 position_smoothing_enabled = true
-script = ExtResource("4_tbom0")
-
-[node name="Heart" parent="." instance=ExtResource("6_al5s0")]
-position = Vector2(-18, 39)
 
 [node name="Rat" parent="." instance=ExtResource("5_i2ee4")]
 position = Vector2(-205, -17)
@@ -586,8 +569,4 @@ position = Vector2(158, -111)
 [node name="Bat" parent="." instance=ExtResource("6_flmyw")]
 position = Vector2(-21, 161)
 
-[node name="spikeTrap" parent="." instance=ExtResource("7_ja1n4")]
-position = Vector2(-98, 45)
-
-[node name="bear_trap" parent="." instance=ExtResource("8_uunba")]
-position = Vector2(36, 67)
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("7_2th0w")]
