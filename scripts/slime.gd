@@ -1,4 +1,4 @@
-extends Enemy
+extends enemy
 
 func _process(delta: float) -> void:
 	if attacking == false:

@@ -1,4 +1,4 @@
-extends Enemy
+extends enemy
 
 func _on_ready() :
 	damage = 5

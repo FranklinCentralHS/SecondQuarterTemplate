@@ -103,26 +103,26 @@ func attack(attackDirection):
 
 #detects enemiees going in and out of attack range
 func _on_left_detection_body_exited(body:Node2D) -> void:
-	if body.get_parent()is Enemy:
+	if body.get_parent() is enemy:
 		leftArea.erase(body)
 func _on_left_detection_body_entered(body:Node2D) -> void:
-	if body.get_parent()is Enemy:
+	if body.get_parent() is enemy:
 		leftArea.append(body)
 func _on_right_detection_body_exited(body:Node2D) -> void:
-	if body.get_parent()is Enemy:
+	if body.get_parent() is enemy:
 		rightArea.erase(body)
 func _on_right_detection_body_entered(body:Node2D) -> void:
-	if body.get_parent()is Enemy:
+	if body.get_parent() is enemy:
 		rightArea.append(body)
 func _on_back_detection_body_exited(body:Node2D) -> void:
-	if body.get_parent()is Enemy:
+	if body.get_parent() is enemy:
 		backArea.erase(body)
 func _on_back_detection_body_entered(body:Node2D) -> void:
-	if body.get_parent()is Enemy:
+	if body.get_parent() is enemy:
 		backArea.append(body)
 func _on_front_detection_body_exited(body:Node2D) -> void:
-	if body.get_parent() is Enemy:
+	if body.get_parent() is enemy:
 		frontArea.erase(body)
 func _on_front_detection_body_entered(body:Node2D) -> void:
-	if body.get_parent()is Enemy:
+	if body.get_parent() is enemy:
 		frontArea.append(body)

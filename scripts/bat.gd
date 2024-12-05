@@ -1,4 +1,4 @@
-extends Enemy
+extends enemy
 
 func _process(delta: float) -> void:
 	if attacking == false:
@@ -18,4 +18,3 @@ func _on_detection_area_body_entered(body:Node2D) -> void:
 	self.range_body_entered(body)
 func _on_detection_area_body_exited(body:Node2D) -> void:
 	self.range_body_exited(body)
-

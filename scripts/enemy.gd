@@ -1,5 +1,5 @@
 extends Node2D
-class_name Enemy
+class_name enemy
 
 #higher the speed var slower the enemy
 @export var speed = 100
