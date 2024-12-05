@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://chl23sse3226y"]
+[gd_scene load_steps=11 format=3 uid="uid://chl23sse3226y"]
 
 [ext_resource type="Texture2D" uid="uid://023lyws6b8ea" path="res://assets/tiles/tileset.png" id="1_rcm8w"]
 [ext_resource type="Texture2D" uid="uid://b8m477qsfgmlt" path="res://assets/tiles/Wall Tiles.png" id="2_si0g5"]
 [ext_resource type="PackedScene" uid="uid://b83lxavorfbdm" path="res://scenes/player.tscn" id="3_c7nce"]
 [ext_resource type="PackedScene" uid="uid://cyvpf3umoirk1" path="res://scenes/slime.tscn" id="4_13vry"]
-[ext_resource type="PackedScene" uid="uid://mudmdke7ck3y" path="res://scenes/rat.tscn" id="5_i2ee4"]
+[ext_resource type="PackedScene" uid="uid://jr2c4eaj23se" path="res://scenes/rat.tscn" id="5_i2ee4"]
 [ext_resource type="PackedScene" uid="uid://crn5d7d0nfk5y" path="res://scenes/bat.tscn" id="6_flmyw"]
+[ext_resource type="PackedScene" uid="uid://eurbp1os4vay" path="res://scenes/audio_stream_player.tscn" id="7_2th0w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3tah"]
 texture = ExtResource("1_rcm8w")
@@ -567,3 +568,5 @@ position = Vector2(158, -111)
 
 [node name="Bat" parent="." instance=ExtResource("6_flmyw")]
 position = Vector2(-21, 161)
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("7_2th0w")]
