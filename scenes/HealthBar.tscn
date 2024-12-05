@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://o8at15a556g4"]
+[gd_scene load_steps=3 format=3 uid="uid://cdt2c6j76n3pv"]
 
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="1_twh2e"]
 [ext_resource type="PackedScene" uid="uid://dfcden2bam4jo" path="res://scenes/Resource_Meter.tscn" id="2_eompv"]
@@ -8,5 +8,6 @@ script = ExtResource("1_twh2e")
 health = 300
 
 [node name="health_bar" parent="." instance=ExtResource("2_eompv")]
-texture_under = null
-texture_progress = null
+value = 100.0
+texture_under = ExtResource("3_aykeu")
+texture_progress = ExtResource("4_a7m0p")

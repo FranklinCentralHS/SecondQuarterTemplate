@@ -1,6 +1,15 @@
 extends CharacterBody2D
 class_name Player
 
+@onready var healthBar : UI = %HealthBar
+
+var health : int = 100 :
+	set(value):
+		print(value)
+		health = value
+		if healthBar != null:
+			healthBar.set_health(value)
+
 
 enum Directions {UP, DOWN, LEFT, RIGHT}
 
@@ -17,6 +26,8 @@ var leftArea: Array = []
 var rightArea: Array = []
 var frontArea: Array = []
 var backArea: Array = []
+
+
 
 func _process(_delta):
 	direction = Input.get_vector("left", "right", "up", "down")

@@ -1,5 +1,8 @@
 extends Enemy
 
+func _on_ready() :
+	damage = 5
+
 func _process(delta: float) -> void:
 	if attacking == false:
 		if player_chase == true:
