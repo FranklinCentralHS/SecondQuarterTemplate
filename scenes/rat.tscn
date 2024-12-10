@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://jr2c4eaj23se"]
 
-[ext_resource type="Script" path="res://rat.gd" id="1_covdo"]
+[ext_resource type="Script" path="res://scripts/rat.gd" id="1_61fbk"]
 [ext_resource type="Texture2D" uid="uid://q0krrhgwv365" path="res://assets/Rat/Rat_Idle.png" id="1_we0iy"]
 [ext_resource type="Texture2D" uid="uid://sabpt2euw54f" path="res://assets/Rat/Rat_Attack.png" id="2_nm31u"]
 [ext_resource type="Texture2D" uid="uid://be3f7gp12wspp" path="res://assets/Rat/Rat_Death.png" id="3_xrjri"]
@@ -149,7 +149,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_aa6co")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -202,9 +202,11 @@ radius = 8.0
 height = 24.0
 
 [node name="Rat" type="Node2D"]
-script = ExtResource("1_covdo")
+script = ExtResource("1_61fbk")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(1, -5)
@@ -214,8 +216,10 @@ shape = SubResource("CapsuleShape2D_wpqhc")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_ykcsv")
-animation = &"moving"
+animation = &"death"
 autoplay = "idle"
+frame = 4
+frame_progress = 1.0
 
 [node name="detectionArea" type="Area2D" parent="."]
 
@@ -233,6 +237,7 @@ position = Vector2(1, -5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_8b2up")
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="timeout" from="attackTimer" to="." method="attack"]

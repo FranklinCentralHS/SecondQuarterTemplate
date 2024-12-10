@@ -9,10 +9,11 @@ var is_dying = false
 
 enum Directions {UP, DOWN, LEFT, RIGHT}
 
+@export var speed: int = 100
+@export var damage: int = 2
+
 var isAttacking = false
 var direction: Vector2 = Vector2.ZERO
-@export var speed: int = 100
-@onready var animations : AnimatedSprite2D = $AnimatedSprite2D
 var facing : Directions = Directions.DOWN
 var health : int = 100 :
 	set(value):
@@ -27,6 +28,12 @@ var health : int = 100 :
 				timer.start()
 
 
+@onready var animations : AnimatedSprite2D = $AnimatedSprite2D
+
+var leftArea: Array = []
+var rightArea: Array = []
+var frontArea: Array = []
+var backArea: Array = []
 
 
 
@@ -57,16 +64,20 @@ func _process(_delta):
 		elif facing == Directions.UP && isAttacking == false && not is_dying:
 			animations.play("idle_up")
 	#Attack Update
-	if Input.is_action_pressed("attack"):
+	if Input.is_action_just_pressed("attack"):
 			isAttacking = true
 			if facing == Directions.LEFT && isAttacking == true:
 				animations.play("attack_left")
+				attack("left")
 			elif facing == Directions.RIGHT && isAttacking == true:
 				animations.play("attack_right")
+				attack("right")
 			elif facing == Directions.DOWN && isAttacking == true:
 				animations.play("attack_down")
+				attack("down")
 			elif facing == Directions.UP && isAttacking == true:
 				animations.play("attack_up")
+				attack("up")
 
 
 func _physics_process(_delta):
@@ -86,3 +97,43 @@ func _on_animated_sprite_2d_animation_finished():
 
 func _on_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+#attacking functoin
+func attack(attackDirection):
+	if attackDirection == "left":
+		for enemyBody in leftArea:
+			enemyBody.get_parent().damaged(damage)
+	elif attackDirection == "right":
+		for enemyBody in rightArea:
+			enemyBody.get_parent().damaged(damage)
+	elif attackDirection == "up":
+		for enemyBody in backArea:
+			enemyBody.get_parent().damaged(damage)
+	elif attackDirection == "down":
+		for enemyBody in frontArea:
+			enemyBody.get_parent().damaged(damage)
+
+#detects enemiees going in and out of attack range
+func _on_left_detection_body_exited(body:Node2D) -> void:
+	if body.get_parent() is enemy:
+		leftArea.erase(body)
+func _on_left_detection_body_entered(body:Node2D) -> void:
+	if body.get_parent() is enemy:
+		leftArea.append(body)
+func _on_right_detection_body_exited(body:Node2D) -> void:
+	if body.get_parent() is enemy:
+		rightArea.erase(body)
+func _on_right_detection_body_entered(body:Node2D) -> void:
+	if body.get_parent() is enemy:
+		rightArea.append(body)
+func _on_back_detection_body_exited(body:Node2D) -> void:
+	if body.get_parent() is enemy:
+		backArea.erase(body)
+func _on_back_detection_body_entered(body:Node2D) -> void:
+	if body.get_parent() is enemy:
+		backArea.append(body)
+func _on_front_detection_body_exited(body:Node2D) -> void:
+	if body.get_parent() is enemy:
+		frontArea.erase(body)
+func _on_front_detection_body_entered(body:Node2D) -> void:
+	if body.get_parent() is enemy:
+		frontArea.append(body)
