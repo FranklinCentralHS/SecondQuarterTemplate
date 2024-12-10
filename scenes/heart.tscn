@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://ox7gu7ndq1uf"]
 
 [ext_resource type="Script" path="res://scripts/heart.gd" id="1_kkct5"]
-[ext_resource type="Texture2D" path="res://assets/Bat/speen.png" id="2_pgg0x"]
-[ext_resource type="AudioStream" path="res://SFX/magical_1.ogg" id="3_ouoft"]
+[ext_resource type="Texture2D" uid="uid://vrvb8xljnp5y" path="res://assets/Bat/speen.png" id="2_pgg0x"]
+[ext_resource type="AudioStream" uid="uid://b2xjiy5vgkyup" path="res://SFX/magical_1.ogg" id="3_ouoft"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jab8m"]
 atlas = ExtResource("2_pgg0x")
@@ -27,35 +27,6 @@ region = Rect2(0, 64, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ap6mc"]
 atlas = ExtResource("2_pgg0x")
 region = Rect2(0, 80, 16, 16)
-[gd_scene load_steps=15 format=3 uid="uid://d15bpuhewbkih"]
-
-[ext_resource type="Texture2D" uid="uid://vrvb8xljnp5y" path="res://assets/Bat/speen.png" id="1_ii1n3"]
-[ext_resource type="Script" path="res://scripts/heart.gd" id="1_kkct5"]
-[ext_resource type="AudioStream" uid="uid://b2xjiy5vgkyup" path="res://SFX/magical_1.ogg" id="3_ouoft"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ut8pb"]
-atlas = ExtResource("1_ii1n3")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n2yqh"]
-atlas = ExtResource("1_ii1n3")
-region = Rect2(32, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejcmt"]
-atlas = ExtResource("1_ii1n3")
-region = Rect2(32, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gpeyg"]
-atlas = ExtResource("1_ii1n3")
-region = Rect2(32, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k58ra"]
-atlas = ExtResource("1_ii1n3")
-region = Rect2(32, 64, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fqdxs"]
-atlas = ExtResource("1_ii1n3")
-region = Rect2(32, 80, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0joyu"]
 animations = [{
@@ -77,22 +48,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ap6mc")
-"texture": SubResource("AtlasTexture_ut8pb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n2yqh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ejcmt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gpeyg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k58ra")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fqdxs")
 }],
 "loop": true,
 "name": &"default",
