@@ -3,6 +3,7 @@ class_name Player
 
 @onready var healthBar : UI = %HealthBar
 
+
 var health : int = 100 :
 	set(value):
 		print(value)
@@ -15,6 +16,10 @@ enum Directions {UP, DOWN, LEFT, RIGHT}
 
 @export var speed: int = 100
 @export var damage: int = 2
+@export var energy = 100
+@export var maxEnergy = 100
+@export var rechargeEnergy = 10
+@export var energyRechargeTime = 2.5
 
 var isAttacking = false
 var direction: Vector2 = Vector2.ZERO
@@ -22,12 +27,17 @@ var facing : Directions = Directions.DOWN
 
 @onready var animations : AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var energyDisplay = %energyDisplay
+
+@onready var energyRechargeTimer = $energyRechargeTimer
+
 var leftArea: Array = []
 var rightArea: Array = []
 var frontArea: Array = []
 var backArea: Array = []
 
-
+func _ready() -> void:
+	energyRechargeTimer.wait_time = energyRechargeTime
 
 func _process(_delta):
 	direction = Input.get_vector("left", "right", "up", "down")
@@ -57,6 +67,7 @@ func _process(_delta):
 			animations.play("idle_up")
 	#Attack Update
 	if Input.is_action_just_pressed("attack"):
+		if energy - 10 >= 0:
 			isAttacking = true
 			if facing == Directions.LEFT && isAttacking == true:
 				animations.play("attack_left")
@@ -70,6 +81,14 @@ func _process(_delta):
 			elif facing == Directions.UP && isAttacking == true:
 				animations.play("attack_up")
 				attack("up")
+
+	if speed == 150:
+		if energy - 1 < 0:
+			speed = 100
+		else:
+			energy -= 20 * _delta
+			energyDisplay.update(energy, maxEnergy)
+
 
 
 func _physics_process(_delta):
@@ -88,6 +107,8 @@ func _on_animated_sprite_2d_animation_finished():
 
 #attacking functoin
 func attack(attackDirection):
+	energy -= 10
+	energyDisplay.update(energy, maxEnergy)
 	if attackDirection == "left":
 		for enemyBody in leftArea:
 			enemyBody.get_parent().damaged(damage)
@@ -126,3 +147,11 @@ func _on_front_detection_body_exited(body:Node2D) -> void:
 func _on_front_detection_body_entered(body:Node2D) -> void:
 	if body.get_parent() is enemy:
 		frontArea.append(body)
+
+
+func _on_energy_recharge_timer_timeout() -> void:
+	if energy + rechargeEnergy < maxEnergy:
+		energy += rechargeEnergy
+	elif energy + rechargeEnergy >= maxEnergy:
+		energy = maxEnergy
+	energyDisplay.update(energy, maxEnergy)
