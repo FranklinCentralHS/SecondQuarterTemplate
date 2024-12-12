@@ -9,5 +9,4 @@ func _on_ready():
 
 
 func set_health(newHealth):
-	print("set health called")
 	rectangle.value = newHealth

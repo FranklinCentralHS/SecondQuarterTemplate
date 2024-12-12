@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://h4ufhkdu57cj" path="res://assets/Bat/Bat_Death.png" id="3_eih2o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lvg4n"]
-radius = 12.0
+radius = 15.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_daacl"]
 atlas = ExtResource("2_hd6ln")
@@ -201,7 +201,7 @@ animations = [{
 radius = 71.007
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e0fer"]
-radius = 14.0
+radius = 15.0
 
 [node name="Bat" type="Node2D"]
 script = ExtResource("1_5o5a6")
@@ -211,7 +211,6 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_lvg4n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -236,7 +235,6 @@ shape = SubResource("CircleShape2D_uaxhb")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackArea"]
-position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_e0fer")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

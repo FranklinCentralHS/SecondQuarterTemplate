@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bt7csmbnmmqvd" path="res://assets/Rat/Rat_Run.png" id="5_0xgfd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wpqhc"]
-radius = 7.0
-height = 22.0
+radius = 9.0
+height = 28.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4hfbf"]
 atlas = ExtResource("2_nm31u")
@@ -198,8 +198,8 @@ animations = [{
 radius = 57.0351
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8b2up"]
-radius = 8.0
-height = 24.0
+radius = 9.0
+height = 28.0
 
 [node name="Rat" type="Node2D"]
 script = ExtResource("1_61fbk")

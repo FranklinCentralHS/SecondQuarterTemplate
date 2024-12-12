@@ -17,7 +17,6 @@ var energyRechargeTime = 2.5
 
 var health : int = 100 :
 	set(value):
-		print(value)
 		health = value
 		if healthBar != null:
 			healthBar.set_health(value)
