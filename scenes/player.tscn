@@ -713,6 +713,10 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_530xi")
 
+[node name="SwordSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_jdruu")
+volume_db = 0.466
+pitch_scale = 1.12
 [node name="DeathTimer" type="Timer" parent="."]
 one_shot = true
 
