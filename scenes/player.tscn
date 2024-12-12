@@ -1,10 +1,11 @@
-[gd_scene load_steps=93 format=3 uid="uid://2f5m5yvx1n14"]
+[gd_scene load_steps=94 format=3 uid="uid://2f5m5yvx1n14"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_4etik"]
 [ext_resource type="Texture2D" uid="uid://dto5wi81pwegs" path="res://assets/player/orc3_idle_full.png" id="1_6x6nt"]
 [ext_resource type="Texture2D" uid="uid://tgumqpdkoo3d" path="res://assets/player/orc3_attack_full.png" id="2_khjms"]
 [ext_resource type="Texture2D" uid="uid://d3thfvaf006gj" path="res://assets/player/orc3_walk_full.png" id="3_5odqs"]
 [ext_resource type="Texture2D" uid="uid://d0uxueb4iu1wo" path="res://assets/player/orc3_death_full.png" id="3_6n5qn"]
+[ext_resource type="AudioStream" uid="uid://dscr3f33ix44e" path="res://scenes/sword-sound-effect-1-234987.mp3" id="6_1dq5r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6ohd"]
 atlas = ExtResource("2_khjms")
@@ -713,12 +714,11 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_530xi")
 
-[node name="SwordSFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_jdruu")
-volume_db = 0.466
-pitch_scale = 1.12
 [node name="DeathTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="SwordSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1dq5r")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="frontDetection" to="." method="_on_front_detection_body_entered"]
