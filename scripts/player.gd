@@ -3,6 +3,16 @@ class_name Player
 
 @onready var healthBar : UI = %HealthBar
 @onready var timer : Timer = $DeathTimer
+@onready var animations : AnimatedSprite2D = $AnimatedSprite2D
+@onready var energyDisplay = %energyDisplay
+@onready var energyRechargeTimer = $energyRechargeTimer
+
+var speed: int = 100
+var damage: int = 2
+var energy = 100
+var maxEnergy = 100
+var rechargeEnergy = 10
+var energyRechargeTime = 2.5
 
 
 var health : int = 100 :
@@ -17,50 +27,18 @@ var health : int = 100 :
 			if (timer.time_left == 0):
 				timer.start()
 
-
-
-var is_dying = false
-
-
 enum Directions {UP, DOWN, LEFT, RIGHT}
-
-@export var speed: int = 100
-@export var damage: int = 2
-@export var energy = 100
-@export var maxEnergy = 100
-@export var rechargeEnergy = 10
-@export var energyRechargeTime = 2.5
 
 var isAttacking = false
 var direction: Vector2 = Vector2.ZERO
 var facing : Directions = Directions.DOWN
-var health : int = 100 :
-	set(value):
-		print(value)
-		health = value
-		if healthBar != null:
-			healthBar.set_health(value)
-		if health <= 0:
-			animations.play("death")
-			is_dying = true
-			if (timer.time_left == 0):
-				timer.start()
+var is_dying = false
 
-
-
-@onready var animations : AnimatedSprite2D = $AnimatedSprite2D
-
-@onready var energyDisplay = %energyDisplay
-
-@onready var energyRechargeTimer = $energyRechargeTimer
 
 var leftArea: Array = []
 var rightArea: Array = []
 var frontArea: Array = []
 var backArea: Array = []
-
-func _ready() -> void:
-	energyRechargeTimer.wait_time = energyRechargeTime
 
 func _process(_delta):
 	direction = Input.get_vector("left", "right", "up", "down")
