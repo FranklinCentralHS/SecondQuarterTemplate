@@ -40,6 +40,9 @@ var rightArea: Array = []
 var frontArea: Array = []
 var backArea: Array = []
 
+@onready var SwordSFX = $SwordSFX
+
+
 func _process(_delta):
 	direction = Input.get_vector("left", "right", "up", "down")
 	#MOVEMENT
@@ -125,6 +128,8 @@ func attack(attackDirection):
 	elif attackDirection == "down":
 		for enemyBody in frontArea:
 			enemyBody.get_parent().damaged(damage)
+	SwordSFX.play()
+
 
 #detects enemiees going in and out of attack range
 func _on_left_detection_body_exited(body:Node2D) -> void:
