@@ -714,7 +714,11 @@ autostart = true
 [node name="DeathTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="frontDetection" to="." method="_on_front_detection_body_entered"]
 [connection signal="body_exited" from="frontDetection" to="." method="_on_front_detection_body_exited"]
 [connection signal="body_entered" from="backDetection" to="." method="_on_back_detection_body_entered"]

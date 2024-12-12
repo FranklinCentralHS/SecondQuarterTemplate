@@ -18,6 +18,7 @@ var health : int = 100 :
 				timer.start()
 
 
+
 var is_dying = false
 
 
@@ -33,6 +34,18 @@ enum Directions {UP, DOWN, LEFT, RIGHT}
 var isAttacking = false
 var direction: Vector2 = Vector2.ZERO
 var facing : Directions = Directions.DOWN
+var health : int = 100 :
+	set(value):
+		print(value)
+		health = value
+		if healthBar != null:
+			healthBar.set_health(value)
+		if health <= 0:
+			animations.play("death")
+			is_dying = true
+			if (timer.time_left == 0):
+				timer.start()
+
 
 
 @onready var animations : AnimatedSprite2D = $AnimatedSprite2D
