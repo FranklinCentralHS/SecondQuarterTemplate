@@ -54,3 +54,11 @@ func damaged(damageTaken):
 	if health<=0 and state!="dying":
 		await get_tree().create_timer(0.2).timeout
 		queue_free()
+#checks if player is in range of melee attack
+func _on_attack_area_body_entered(body:Node2D) -> void:
+	if(body is Player):
+		self.start_attack_timer()
+		body.health -= damage
+func _on_attack_area_body_exited(body:Node2D) -> void:
+	if(body is Player):
+		self.stop_attack_timer()
