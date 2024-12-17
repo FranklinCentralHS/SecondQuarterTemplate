@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://ipd7adlssr6v"]
+
+[ext_resource type="FontFile" uid="uid://bstyjexoj8vx7" path="res://assets/fonts/Pixica-Regular.ttf" id="1_4ap78"]
+[ext_resource type="Script" path="res://scripts/energy_display.gd" id="1_awprk"]
+
+[node name="energyDisplay" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(32, 16)
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_awprk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+color = Color(0, 0, 0, 0.478431)
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 9.0
+offset_right = 39.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("1_4ap78")
+theme_override_font_sizes/font_size = 16
+text = "100/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -7.0
+offset_right = 38.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("1_4ap78")
+text = "Energy"
+horizontal_alignment = 1
+vertical_alignment = 1
